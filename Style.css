@@ -1,0 +1,509 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: whitesmoke;
+    background: url(img/intro.jpg) no-repeat;
+    background-size: cover;
+    /* overflow: hidden; */
+}
+
+h1,
+h2,
+h3,
+h6 {
+    margin: 0;
+    color: gold;
+}
+
+h4,
+h5 {
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: goldenrod;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: gold;
+    cursor: pointer;
+}
+
+#hello {
+    text-align: center;
+    padding-top: 70px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Container */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Intro */
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.intro_inner {
+    width: 100%;
+    max-width: 850px;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#gameChoice {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+    display: block;
+}
+
+#gameOptions {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+    display: none;
+}
+
+.intro_title {
+    font-size: 140px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+
+.suptitle_title {
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 15px;
+    font-size: 70px;
+    color: white;
+}
+
+.subtitle_title {
+    font-family: 'Kaushan Script', cursive;
+    margin-top: 30px;
+    font-size: 50px;
+    color: white;
+}
+
+.subtitle_title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    margin: 30px auto 30px;
+}
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header_inner {
+    padding: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* logo */
+
+.header_logo {
+    display: block;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: goldenrod;
+}
+
+
+/* Button */
+
+.button {
+    display: inline-block;
+    vertical-align: top;
+    padding: 6px 40px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+    width: 900;
+    background-color: goldenrod;
+    color: white;
+    transition: all .1s linear;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    color: goldenrod;
+    cursor: pointer;
+}
+
+
+/* Nav */
+
+.nav {
+    padding-right: 50px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav_link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2 linear;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav_link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: goldenrod;
+    position: absolute;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    transition: opacity .1s linear;
+}
+
+.nav_link:hover {
+    color: goldenrod;
+}
+
+.nav_link:hover:after,
+.nav_link:active {
+    opacity: 1;
+}
+
+.nav_link.active {
+    color: goldenrod;
+}
+
+
+/* Sign Up */
+
+.intro_reg {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+
+
+/* Hide Input Number Arrows */
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+/* SUDOUKU */
+
+#sudoku-grid {
+    background-color: whitesmoke;
+    width: 390px;
+    height: 390px;
+    display: none;
+    margin: auto;
+    grid-template-columns: 130px 130px 130px;
+    grid-template-rows: 130px 130px 130px;
+    border: 1px solid black;
+}
+
+.subgrid {
+    width: 126px;
+    height: 126x;
+    display: grid;
+    grid-template-columns: 41px 41px 41px;
+    grid-template-rows: 41px 41px 41px;
+    border: 1px solid goldenrod;
+}
+
+input {
+    border: 1px solid lightgrey;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+input:invalid {
+    background-color: red
+}
+
+#mistaken,
+#mistakesAtm {
+    color: gold;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Lucida Console';
+    font-weight: bold;
+}
+
+#mistake {
+    display: inline;
+}
+
+
+/* SIGNIN/SIGNUP */
+
+.regContainer {
+    width: 450px;
+    background-color: rgba(24, 33, 52, 0.7);
+    margin: 100px auto 0 auto;
+    text-align: center;
+    box-shadow: 0 -5px 0 goldenrod;
+    padding-bottom: 20px;
+    margin-top: 150px;
+}
+
+.regContainer img {
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 30px 0;
+    border: 5px solid #1a394f;
+    border-radius: 50%;
+    box-shadow: 0 -5px 0 goldenrod;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.dws-input input:hover {
+    box-shadow: 0 0 6px 3px goldenrod;
+}
+
+.dws-submit {
+    padding: 13px 30px;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color: #fff;
+    background-color: goldenrod;
+    border: none;
+    border-bottom: 4px solid black;
+    cursor: pointer;
+}
+
+.dws-submit:hover {
+    transition: all 0.5s;
+    background: black;
+    color: goldenrod;
+    border-bottom: 4px solid goldenrod;
+}
+
+.dws-input::before {
+    font-family: "FontAwesome";
+    content: "\f007";
+    position: absolute;
+    font-size: 30px;
+    padding: 0 0 0 12px;
+    color: goldenrod;
+}
+
+.dws-input:nth-child(2)::before {
+    content: "\f023";
+}
+
+.dws-input:nth-child(3)::before {
+    content: "\f023";
+}
+
+.dws-input:hover::before {
+    color: goldenrod;
+    transition: all 0.3s;
+}
+
+.dws-social i {
+    color: goldenrod;
+    font-size: 30px;
+    width: 30px;
+    padding-top: 20px;
+    margin: 10px;
+}
+
+.dws-social i:hover {
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+
+/* HIDE DIV TOOGLE */
+
+#home {
+    display: block;
+}
+
+#game {
+    display: none;
+}
+
+#login {
+    display: none;
+}
+
+#sign_up {
+    display: none;
+}
+
+#about {
+    display: none;
+}
+
+#about {
+    width: 80%;
+    background-color: rgba(24, 33, 52, 0.7);
+    margin: auto;
+    text-align: left;
+    color: whitesmoke;
+    padding-left: 70px;
+    padding-right: 70px;
+    box-shadow: 0 -5px 0 goldenrod;
+    padding-bottom: 10px;
+    margin-top: 100px;
+}
+
+h4 {
+    text-transform: uppercase;
+}
+
+span {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.aboutTitle {
+    display: block;
+    padding-top: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.aboutUs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    width: 25%;
+    height: 320px;
+    background-color: #1a394f;
+    opacity: 70%;
+    border: 3px solid goldenrod;
+}
+
+.aboutImg {
+    border-radius: 20px;
+    border: 3px solid goldenrod;
+}
+
+.HowToPlayImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#HowToPlay {
+    width: 80%;
+    background-color: rgba(24, 33, 52, 0.7);
+    margin: auto;
+    text-align: left;
+    color: whitesmoke;
+    padding-left: 70px;
+    padding-right: 70px;
+    box-shadow: 0 -5px 0 goldenrod;
+    padding-bottom: 20px;
+    margin-top: 100px;
+    display: none;
+}
+
+#confirm,
+#register {
+    display: none;
+}
+
+
+/* after game */
+
+#winOrLose {
+    display: none;
+    border: 10px solid goldenrod;
+    width: 640px;
+    height: 450px;
+}

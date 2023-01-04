@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon-16x16.png" />
+    <title>GOLDEN SUDOKU</title>
+</head>
+
+
+<body>
+    <!--HOME-->
+    <div id="home">
+        <header class="header">
+            <div class="header_inner">
+                <div class="logo_container">
+                    <div class="header_logo">GOLDEN SUDOKU</div>
+                </div>
+                <nav class="nav" id="nav">
+                    <a class="nav_link active" onclick="pushLink('home')">Home</a>
+                    <a class="nav_link" onclick="pushLink('HowToPlay')">How to Play</a>
+                    <a class="nav_link" onclick="pushLink('game')">Start Game</a>
+                    <a id='inOrOut' class="nav_link" onclick="pushLink('login')">Log in</a>
+                    <a class="nav_link" onclick="pushLink('aboutpage')">About</a>
+                </nav>
+
+            </div>
+        </header>
+    </div>
+
+
+
+    <!-- /header -->
+    <div id="home1">
+        <div class="intro">
+            <div class="container" id="homepage">
+
+
+                <div class="gameChoice">
+                    <h1 class="intro_title">SUDOKU</h1>
+                    <h3 class="subtitle_title">Pazzel for everyone!</h3>
+                    <a class="button" onclick="pushLink('login')">log in or sign up</a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <!--END HOME-->
+
+
+    <!-- How to play -->
+    <div id="HowToPlay">
+        <form><br><br>
+            <h4>Sudoku Rules & Object of the game</h4><br>
+            <p>The object of the game is simple: Fill in the empty cells!</p>
+            <img src="img/start2finish.gif" class="HowToPlayImg">
+            <p>Easy, right? Well, hang on a sec…there is one rule you must follow: no repeats are allowed in any row, column, or block. To put it another way - you must use all nine numbers in each row, column, and block.
+                <br><br>OK, so what are rows, columns, and blocks? Glad you asked! Take a look at this diagram:</p>
+            <img src="img/nine_each_filled.gif" class="HowToPlayImg">
+            <p>Filling in the empty spaces doesn't seem that hard, does it? Actually, very often it's not. Be careful, though - each empty cell has only one correct answer. In fact, you might say the object of the game isn't so much "filling in" the cells
+                as it is "figuring out" what goes in them.
+                <br><br>You see, the pre-filled cells are not random. They were deliberately placed there in such a way to ensure only one final solution to the puzzle.
+                <br><br>It is the player's job to solve the puzzle, cell by cell, until there are no empty cells left!<br>
+                <br><br> 3BOOM - This is a game that uses a medium difficulty Sudoku board and can make only 2 mistakes,<br> on the third mistakes "BooM" you lose the game!</p><br>
+            <h5>Interesting fact: Because of the rules, every completed Sudoku puzzle will end up with exactly nine of each digit<br>(nine 1's, nine 2's, nine 3's, etc).</h5>
+
+        </form>
+    </div>
+    <!-- End How to play -->
+
+
+    <!--GAME-->
+    <div id="game">
+        <div id='hello' id="game">
+            <H1 id='name'></H1>
+        </div>
+        <div id="gameChoice">
+            <a class="button" onclick="prin(1)">Ease</a>
+            <a class="button" onclick="prin(2)">Medium</a>
+            <a class="button" onclick="prin(3)">Hard</a>
+            <a class="button" onclick="game3boom()">3Boom</a>
+        </div><br>
+        <div id='mistaken'>
+            <p id="mistake">Mistakes: <span id="mistakesAtm">0</span>/3</p>
+        </div>
+        <div id="sudoku-grid" onchange="mistaken()">
+            <div class="subgrid" id="subgrid_1a">
+                <input type="number" min="1" max="9" id="cell00" />
+                <input type="number" min="1" max="9" id="cell01" />
+                <input type="number" min="1" max="9" id="cell02" />
+                <input type="number" min="1" max="9" id="cell10" />
+                <input type="number" min="1" max="9" id="cell11" />
+                <input type="number" min="1" max="9" id="cell12" />
+                <input type="number" min="1" max="9" id="cell20" />
+                <input type="number" min="1" max="9" id="cell21" />
+                <input type="number" min="1" max="9" id="cell22" />
+            </div>
+            <div class="subgrid" id="subgrid_1b">
+                <input type="number" min="1" max="9" id="cell03" />
+                <input type="number" min="1" max="9" id="cell04" />
+                <input type="number" min="1" max="9" id="cell05" />
+                <input type="number" min="1" max="9" id="cell13" />
+                <input type="number" min="1" max="9" id="cell14" />
+                <input type="number" min="1" max="9" id="cell15" />
+                <input type="number" min="1" max="9" id="cell23" />
+                <input type="number" min="1" max="9" id="cell24" />
+                <input type="number" min="1" max="9" id="cell25" />
+            </div>
+            <div class="subgrid" id="subgrid_1c">
+                <input type="number" min="1" max="9" id="cell06" />
+                <input type="number" min="1" max="9" id="cell07" />
+                <input type="number" min="1" max="9" id="cell08" />
+                <input type="number" min="1" max="9" id="cell16" />
+                <input type="number" min="1" max="9" id="cell17" />
+                <input type="number" min="1" max="9" id="cell18" />
+                <input type="number" min="1" max="9" id="cell26" />
+                <input type="number" min="1" max="9" id="cell27" />
+                <input type="number" min="1" max="9" id="cell28" />
+            </div>
+            <div class="subgrid" id="subgrid_2a">
+                <input type="number" min="1" max="9" id="cell30" />
+                <input type="number" min="1" max="9" id="cell31" />
+                <input type="number" min="1" max="9" id="cell32" />
+                <input type="number" min="1" max="9" id="cell40" />
+                <input type="number" min="1" max="9" id="cell41" />
+                <input type="number" min="1" max="9" id="cell42" />
+                <input type="number" min="1" max="9" id="cell50" />
+                <input type="number" min="1" max="9" id="cell51" />
+                <input type="number" min="1" max="9" id="cell52" />
+            </div>
+            <div class="subgrid" id="subgrid_2b">
+                <input type="number" min="1" max="9" id="cell33" />
+                <input type="number" min="1" max="9" id="cell34" />
+                <input type="number" min="1" max="9" id="cell35" />
+                <input type="number" min="1" max="9" id="cell43" />
+                <input type="number" min="1" max="9" id="cell44" />
+                <input type="number" min="1" max="9" id="cell45" />
+                <input type="number" min="1" max="9" id="cell53" />
+                <input type="number" min="1" max="9" id="cell54" />
+                <input type="number" min="1" max="9" id="cell55" />
+            </div>
+            <div class="subgrid " id="subgrid_2c ">
+                <input type="number" min="1" max="9" id="cell36" />
+                <input type="number" min="1" max="9" id="cell37" />
+                <input type="number" min="1" max="9" id="cell38" />
+                <input type="number" min="1" max="9" id="cell46" />
+                <input type="number" min="1" max="9" id="cell47" />
+                <input type="number" min="1" max="9" id="cell48" />
+                <input type="number" min="1" max="9" id="cell56" />
+                <input type="number" min="1" max="9" id="cell57" />
+                <input type="number" min="1" max="9" id="cell58" />
+            </div>
+            <div class="subgrid " id="subgrid_3a ">
+                <input type="number" min="1" max="9" id="cell60" />
+                <input type="number" min="1" max="9" id="cell61" />
+                <input type="number" min="1" max="9" id="cell62" />
+                <input type="number" min="1" max="9" id="cell70" />
+                <input type="number" min="1" max="9" id="cell71" />
+                <input type="number" min="1" max="9" id="cell72" />
+                <input type="number" min="1" max="9" id="cell80" />
+                <input type="number" min="1" max="9" id="cell81" />
+                <input type="number" min="1" max="9" id="cell82" />
+            </div>
+            <div class="subgrid " id="subgrid_3b ">
+                <input type="number" min="1" max="9" id="cell63" />
+                <input type="number" min="1" max="9" id="cell64" />
+                <input type="number" min="1" max="9" id="cell65" />
+                <input type="number" min="1" max="9" id="cell73" />
+                <input type="number" min="1" max="9" id="cell74" />
+                <input type="number" min="1" max="9" id="cell75" />
+                <input type="number" min="1" max="9" id="cell83" />
+                <input type="number" min="1" max="9" id="cell84" />
+                <input type="number" min="1" max="9" id="cell85" />
+            </div>
+            <div class="subgrid " id="subgrid_3c ">
+                <input type="number" min="1" max="9" id="cell66" />
+                <input type="number" min="1" max="9" id="cell67" />
+                <input type="number" min="1" max="9" id="cell68" />
+                <input type="number" min="1" max="9" id="cell76" />
+                <input type="number" min="1" max="9" id="cell77" />
+                <input type="number" min="1" max="9" id="cell78" />
+                <input type="number" min="1" max="9" id="cell86" />
+                <input type="number" min="1" max="9" id="cell87" />
+                <input type="number" min="1" max="9" id="cell88" />
+            </div><br>
+
+        </div>
+
+        <div id="gameOptions">
+            <a class="button" onclick="cleanBoard()">Clear</a>
+            <a id='checkButton' class="button" onclick="check()">Check</a>
+            <a id='check3Boom' class="button" onclick="">Check</a>
+            <a class="button" id="hint" onclick="hint()">Hint</a>
+        </div>
+        <div class="intro" id='winOrLose'>
+            <a class="button" onclick="pushLink('game')">NEW GAME</a>
+        </div>
+    </div>
+
+    <!--END game-->
+
+    <!-- login-->
+    <div id="login" class="regContainer">
+        <img src="img/men.png">
+        <div>
+            <div class="dws-input">
+                <input type="text" id='username' name="username" placeholder="Enter login">
+            </div>
+            <div class="dws-input">
+                <input type="password" id='password' name="password" placeholder="Enter password">
+            </div>
+            <div id='confirmFaShow' class="dws-input">
+                <input type="password" id='confirm' name="password" placeholder="Confirm password">
+            </div>
+            <button id='loginButton' class="button" onclick="checkLoginInformation()">ENTER</button><br>
+            <button id='register' class="button" onclick="register()">SIGN-UP</button><br />
+            <a id='reg' href="#" onclick="replace_signin_to_signup()">SIGN-UP</a>
+        </div>
+        <div class="dws-social">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+
+        </div>
+
+    </div>
+    <!--END login -->
+
+
+
+    <!--about-->
+    <div class='about' id='about'>
+        <div class="aboutTitle">
+            <h4>A little about us and about this project:</h4>
+            <p>We are students an intensive full-stack course in 'SV college' and it's our semi-project at the course.</p>
+            <p>We are so busy writing functionality and design of this site,<br> That there is simply no time to write anything about us and how we create this site. :)</p>
+            <h4>
+                <span>Just play and enjoy!</span>
+            </h4>
+        </div>
+        <div class="aboutUs">
+            <div class="cards">
+                <div><img src="img/alex.jpg" class=aboutImg></div>
+                <div>Name: Alex Sayenko<br> Age: 30<br>alex@gmail.com</div>
+            </div>
+            <div class="cards">
+                <div><img src="img/barak.jpg" class=aboutImg></div>
+                <div>Name: Barak Zuarets<br>Age: 32<br>barak@gmail.com</div>
+            </div>
+            <div class="cards">
+                <div><img src="img/michael.jpg" class=aboutImg></div>
+                <div>Name: Michael Pan<br> Age: 41<br>michael@gmail.com</div>
+            </div>
+        </div>
+    </div>
+    <!--about-->
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
